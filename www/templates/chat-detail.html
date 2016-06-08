@@ -1,0 +1,69 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Descripcion">
+  <ion-content class="padding">
+    
+    <form name="agregarForm" novalidate>
+    <div class="list">
+    <label class="item item-avatar">
+      <span class="input-label">Nombre</span>
+      <input type="text" name="nombre"  ng-model="persona[0].nombre" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Nombre Cientifico</span>
+      <input type="text" name="apellido" ng-model="persona[0].apellido" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Especie</span>
+      <input type="tel" name="telefono" ng-model="persona[0].telefono"  required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Familia</span>
+      <input type="email" name="email" ng-model="persona[0].email" required>
+      
+      <label class="item item-input">
+  <span class="input-label">Fecha</span>
+  <input type="date" name="fecha" ng-model="persona[0].fecha" required>
+</label>
+      
+   </label>
+   </div>
+   <div class="item item-body">
+    <img class="full-image" src="http://lorempixel.com/64/64">
+    <p>
+      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+      the content is from a card-body consisting of an image and paragraph text. The footer
+      consists of tabs, icons aligned left, within the card-footer.
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+   
+   <div class="padding">
+        <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre</p>
+        <p ng-show="agregarForm.apellido.$error.required">Escriba el apellido</p>
+        <p ng-show="agregarForm.telefono.$error.required">Escriba el telefono</p>
+        <p ng-show="agregarForm.email.$error.required">Escriba el email</p>
+         <p ng-show="agregarForm.fecha.$error.required">Escriba la fecha</p>
+        <p>{{ statusMessage }}</p>
+    </div>
+    
+    <input type="hidden" name="id" ng-model="persona[0].id">
+   
+   <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(persona[0])">      Guardar
+   </button>
+   
+   </form>
+    
+  </ion-content>
+</ion-view>
+Status 

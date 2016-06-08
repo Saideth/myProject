@@ -1,0 +1,51 @@
+<ion-view view-title="Agregar Informacion">
+<ion-nav-buttons side="primary">
+      <button class="button" ng-click="getAll()">
+        Recarga
+      </button>
+  </ion-nav-buttons> 
+ 
+  <ion-content class="padding">
+  
+
+    <form name="agregarForm" novalidate>
+    <div class="list">
+    <label class="item item-input">
+      <span class="input-label" ng-show="agregarForm.nombre.$error.required">Nombre</span>
+      <input type="text" name="nombre" ng-model="persona.nombre" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label" ng-show="agregarForm.apellido.$error.required">Nombre Cientifico</span>
+      <input type="text" name="apellido" ng-model="persona.apellido" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label" ng-show="agregarForm.telefono.$error.required">Especie</span>
+      <input type="tel" name="telefono" ng-model="persona.telefono" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label" ng-show="agregarForm.email.$error.required">Familia</span>
+      <input type="text" name="email" ng-model="persona.email" required>
+      </label>
+      
+       <label class="item item-input">
+      <span class="input-label" ng-show="agregarForm.fecha.$error.required">Fecha</span>
+      <input type="date" name="fecha" ng-model="persona.fecha" required>
+   </label>
+   </div>
+   
+   
+   <div class="padding">
+        <p>{{ statusMessage }}</p>
+    </div>
+   
+   <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(persona)">
+      Guardar
+   </button>
+   
+   </form>
+    
+  </ion-content>
+</ion-view>

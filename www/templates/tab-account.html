@@ -1,0 +1,21 @@
+<ion-view view-title="Account">
+<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+
+
+<ion-content class="has-header contentPadding"> 
+
+     <div class="form-group padding-top">                   
+          <button class='button button-positive' data-ng-click="takePicture()">
+           {{text.buttonTitle}}
+           
+          </button> 
+      </div>
+
+      <div class="item item-image">
+            <img ng-src="{{cameraPic}}"/>
+      </div>                    
+
+</ion-content>
+</ion-view>

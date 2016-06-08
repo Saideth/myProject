@@ -1,0 +1,30 @@
+<ion-view view-title="Registros">
+<ion-nav-buttons side="primary">
+      <button class="button" ng-click="getAll()">
+        Recarga
+      </button>
+  </ion-nav-buttons>  
+ 
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search">
+  </label>
+</div>
+  <ion-content>
+ 
+    <ion-list>
+     
+      <ion-item class="item item-thumbnail-left" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img src="http://lorempixel.com/64/64"/>
+        <h2>{{chat.nombre}} {{chat.apellido}}</h2>
+        <p>{{chat.email}}</p>
+        <p>{{chat.telefono}}</p>
+        <p>{{chat.fecha}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        
+        
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
