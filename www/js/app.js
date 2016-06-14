@@ -14,7 +14,7 @@ var db;
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.services'])
+var exampleApp=angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform,$cordovaSQLite) {
   $ionicPlatform.ready(function() {
@@ -45,6 +45,38 @@ angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.
   
   
 })
+
+
+
+
+
+exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
+ 
+    $scope.takePicture = function() {
+        var options = { 
+            quality : 75, 
+            destinationType : Camera.DestinationType.DATA_URL, 
+            sourceType : Camera.PictureSourceType.CAMERA, 
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+ 
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            // An error occured. Show a message to the user
+        });
+    }
+ 
+})
+
+
+
+
 
 
 

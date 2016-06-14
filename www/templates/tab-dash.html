@@ -5,7 +5,7 @@
       </button>
   </ion-nav-buttons> 
  
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="ExampleController">
   
 
     <form name="agregarForm" novalidate>
@@ -34,13 +34,20 @@
       <span class="input-label" ng-show="agregarForm.fecha.$error.required">Fecha</span>
       <input type="date" name="fecha" ng-model="persona.fecha" required>
    </label>
+   
    </div>
    
    
    <div class="padding">
         <p>{{ statusMessage }}</p>
     </div>
-   
+   <div>
+        <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+    <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+    <button class="button ion-camera button-stable" ng-click="takePicture()"></button>
+       
+       
+   </div>
    <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(persona)">
       Guardar
    </button>
