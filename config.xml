@@ -9,7 +9,7 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-  <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
+  <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
