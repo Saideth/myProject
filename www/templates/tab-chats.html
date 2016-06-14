@@ -5,14 +5,15 @@
       </button>
   </ion-nav-buttons>  
  
-<div class="list list-inset">
+
+  <ion-content ng-controller="ExampleController">
+  <div class="list list-inset">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
     <input type="text" placeholder="Search">
   </label>
 </div>
-  <ion-content ng-controller="ExampleController">
- 
+
     <ion-list>
      
       <ion-item class="item item-thumbnail-left" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
@@ -27,7 +28,7 @@
         
       </ion-item>
     </ion-list>
-    
+  
     
   </ion-content>
 </ion-view>
